@@ -27,3 +27,11 @@
 
 ## マーケット
 アメフト未経験者、コーチが不足しているチーム
+
+## 画面遷移図
+
+https://xd.adobe.com/view/fa35923f-5c24-45f3-8a26-299e3fa0053e-af66/
+
+## er図
+
+https://drive.google.com/file/d/1a4c9KjazHe_Cwdok1FjGMutK_E_6l8_E/view?usp=sharing
