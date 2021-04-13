@@ -1,0 +1,73 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #000003;
+  background-image: url(ball.jpg);
+  background-color:rgba(255,255,255,0.4);
+  background-blend-mode:lighten;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.top-wrapper {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  //font-size: 80px;
+  color:white;
+ -webkit-text-fill-color:white;
+ -webkit-text-stroke-width:2px;
+ -webkit-text-stroke-color:black;
+ font-family: "IMPACT";
+}
+
+.top-wrapper h1{
+font-size: 140px;
+}
+
+
+.top-wrapper a {
+  color:white;
+ -webkit-text-stroke-width:1px;
+ -webkit-text-stroke-color:black;
+ font-family: "IMPACT";
+  text-decoration: none;
+}
+
+.text_1 {
+  margin-right: 50px;
+  font-size: 50px;
+}
+
+.text_2{
+  font-size: 50px;
+}
+
+.text_3{
+  margin-left: 50px;
+  font-size: 50px;
+}
+
+
+.cp_btn{
+  margin-right: 50px;
+  padding-top: 50px;
+  border-top: 50px;
+  font-size: 70px;
+}
+.cp_btn:hover {
+	text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83), 6px 0px 15px rgba(255, 255, 240, 0.83);
+	transition: .4s;
+}
+
+.text_4 {
+  font-size: 35px;
+}
+
+
