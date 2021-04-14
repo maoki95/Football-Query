@@ -10,6 +10,229 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+@import "top";
+@import "bootstrap";
+
+body {
+  background-color: #000003;
+  background-image: url(aaa.jpg);
+  background-color:rgba(255,255,255,0.4);
+  //background-blend-mode:lighten;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(45, 45, 48);
+  align-items: center;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+a,
+a:visited,
+a:hover,
+a:active {
+	text-decoration: none;
+	color: inherit;
+}
+input {
+	display: none;
+}
+/*menuコンテンツ*/
+.cp_fullscreenmenu .menu {
+  z-index: 3;
+	position: fixed;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	width: 100%;
+	height: 100%;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+	background-image: linear-gradient(to top, rgba(16, 17, 20, 0.7) 0%, rgba(26, 31, 32, 0.7) 100%);
+}
+.cp_fullscreenmenu .menu ul {
+	position: absolute;
+	top: 170px;
+	left: 50%;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	transition: all 0.3s ease-in-out;
+	-webkit-transform: translateX(-50%);
+	        transform: translateX(-50%);
+}
+.cp_fullscreenmenu .menu ul li {
+	-webkit-transform: translateY(50px);
+	        transform: translateY(50px);
+	opacity: 0;
+}
+.cp_fullscreenmenu .menu ul li a {
+	font-size: 2em;
+	font-weight: bold;
+	display: block;
+	padding: 10px 0;
+	transition: all 0.2s ease-in-out;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.cp_fullscreenmenu .menu ul li a:hover {
+	color: rgba(236,64,122 ,1);
+}
+/*クリックしたらメニューが開閉の動作*/
+.cp_fullscreenmenu #toggle:checked ~ .menu {
+	visibility: visible;
+	opacity: 1;
+}
+.cp_fullscreenmenu #toggle:checked ~ .menu ul {
+	top: 70px;
+}
+.cp_fullscreenmenu #toggle:checked ~ .menu ul li {
+	-webkit-transform: translateY(0px);
+	        transform: translateY(0px);
+	opacity: 1;
+}
+.cp_fullscreenmenu #toggle:checked ~ .menu ul li:nth-child(1) {
+	transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) 0.1s;
+}
+.cp_fullscreenmenu #toggle:checked ~ .menu ul li:nth-child(2) {
+	transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) 0.2s;
+}
+.cp_fullscreenmenu #toggle:checked ~ .menu ul li:nth-child(3) {
+	transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) 0.3s;
+}
+.cp_fullscreenmenu #toggle:checked ~ .menu ul li:nth-child(4) {
+	transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) 0.4s;
+}
+.cp_fullscreenmenu #toggle:checked + label.hamburger .bar {
+	background-color: rgba(255,255,255 ,1);
+}
+.cp_fullscreenmenu #toggle:checked + label.hamburger .bar:nth-child(2) {
+	-webkit-transform: translateX(50px);
+	        transform: translateX(50px);
+	opacity: 0;
+}
+.cp_fullscreenmenu #toggle:checked + label.hamburger .bar:nth-child(1) {
+	-webkit-transform: translateY(10px) rotate(45deg);
+	        transform: translateY(10px) rotate(45deg);
+}
+.cp_fullscreenmenu #toggle:checked + label.hamburger .bar:nth-child(3) {
+	-webkit-transform: translateY(-8px) rotate(-45deg);
+	        transform: translateY(-8px) rotate(-45deg);
+}
+
+/*ハンバーガー*/
+.cp_fullscreenmenu .hamburger {
+	position: fixed;
+	z-index: 10;
+	top: 10px;
+	right: 10px;
+	display: block;
+	cursor: pointer;
+}
+.cp_fullscreenmenu .hamburger .bar {
+	width: 30px;
+	height: 2px;
+	margin: 7px auto;
+	transition: all 0.3s ease-in-out;
+	background-color: rgba(240,98,146 ,1);
+}
+.cp_fullscreenmenu .hamburger .bar:nth-child(2) {
+	width: 20px;
+}
+.content{
+  background-color:  rgba(240,98,146 ,1);
+}
+
+*, *:before, *:after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.contents {
+	color: #FFF;
+}
+footer {
+	position: fixed;
+	bottom: 0;
+	display: inline-block;
+	width: 100%;
+	height: 70px;
+	margin: 0;
+	background-color: #9E9E9E;
+	box-shadow: 0 -3px 3px 0 rgba(0,0,0,0.2);
+}
+footer .copyright {
+	float: left;
+	width: 60%;
+}
+footer .copyright p {
+	font-size: 0.7em;
+	line-height: 70px;
+	padding-left: 10%;
+	letter-spacing: 1px;
+	color: #ffffff;
+}
+footer .sns {
+	float: right;
+	width: 40%;
+}
+footer .sns a {
+	width: 25%;
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 70px;
+	float: left;
+	-webkit-transition: all, 0.3s;
+	        transition: all, 0.3s;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+}
+footer .sns a:hover {
+	-webkit-transition: all, 0.3s;
+	        transition: all, 0.3s;
+	background-color: #222222;
+}
+footer .sns .insta {
+	background-color: #e4405f;
+}
+footer .sns .fb {
+	background-color: #3b5999;
+}
+footer .sns .tw {
+	background-color: #55acee;
+}
+footer .sns .contact {
+  background-color: #26C6DA;
+  float: right;
+}
+@media (max-width: 480px) {
+	.contents {
+		margin-bottom: 200px;
+	}
+	footer {
+		height: auto;
+	}
+	footer .copyright {
+		width: 100%;
+	}
+	footer .copyright p {
+		padding: 0;
+		text-align: center;
+	}
+	footer .sns {
+		width: 100%;
+	}
+}
