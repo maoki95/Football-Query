@@ -13,6 +13,7 @@ RSpec.describe '共通系', type: :system do
       expect(page).to have_content('新規登録')
       expect(page).to have_content('ログイン')
       expect(page).to have_content('プライバシ-ポリシー')
+      expect(page).to have_content('Contact')
     end
   end
 end
