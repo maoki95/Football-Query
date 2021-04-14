@@ -1,1 +1,7 @@
 inherit_from: .rubocop_todo.yml
+AllCops:
+    NewCops: enable
+Style/MixinUsage:
+    Enabled: false
+Style/Documentation:
+    Enabled: false

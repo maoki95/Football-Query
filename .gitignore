@@ -29,3 +29,5 @@
 # Ignore vendor
 /vendor
 /config/database.yml
+
+app/images

@@ -1,22 +1,9 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-  background-color: #000003;
-  background-image: url(ball.jpg);
-  background-color:rgba(255,255,255,0.4);
-  background-blend-mode:lighten;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
 
 .top-wrapper {
+  z-index: 0;
   position: absolute;
   left: 0;
-  top: 10%;
+  top: 20%;
   width: 100%;
   text-align: center;
   //font-size: 80px;
@@ -69,5 +56,3 @@ font-size: 140px;
 .text_4 {
   font-size: 35px;
 }
-
-
