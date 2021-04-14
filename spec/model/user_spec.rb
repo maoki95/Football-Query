@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
     user2 = build(:user)
     user2.email = user1.email
     user2.valid?
-    expect(user2.errors[:email]).to include('has already been taken')
+    expect(user2.errors[:email]).to include('はすでに存在します')
   end
 
   it 'メールアドレス姓名は必須項目であること' do
@@ -19,21 +19,21 @@ RSpec.describe User, type: :model do
     user.email = nil
     user.name = nil
     user.valid?
-    expect(user.errors[:email]).to include("can't be blank")
-    expect(user.errors[:name]).to include("can't be blank")
+    expect(user.errors[:email]).to include('を入力してください')
+    expect(user.errors[:name]).to include('を入力してください')
   end
 
   it '名は50文字以下であること' do
     user = build(:user)
     user.name = "a" * 51
     user.valid?
-    expect(user.errors[:name]).to include('is too long (maximum is 50 characters)')
+    expect(user.errors[:name]).to include('は50文字以内で入力してください')
   end
 
   it '自己紹介は150文字以下であること' do
     user = build(:user)
     user.introduce = "a" * 151
     user.valid?
-    expect(user.errors[:introduce]).to include('is too long (maximum is 150 characters)')
+    expect(user.errors[:introduce]).to include('は150文字以内で入力してください')
   end
 end
