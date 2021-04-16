@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_04_15_014830) do
     t.string "video"
     t.string "picture"
     t.string "youtube"
+    t.integer "status", default: 0, null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_04_15_014830) do
     t.string "crypted_password"
     t.string "salt"
     t.text "introduce"
-    t.integer "rank"
+    t.integer "rank", default: 0, null: false
     t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

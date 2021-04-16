@@ -14,6 +14,7 @@
 @import "top";
 @import "bootstrap";
 
+
 body {
   background-color: #000003;
   background-image: url(aaa.jpg);
@@ -236,4 +237,17 @@ footer .sns .contact {
 	footer .sns {
 		width: 100%;
 	}
+}
+
+.card-body{
+	color: #333;
+}
+
+.card-header{
+	color: #333;
+}
+
+.card{
+	margin-bottom: 50px;
+	margin-top: 25px;
 }

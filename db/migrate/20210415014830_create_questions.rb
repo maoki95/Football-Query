@@ -6,6 +6,7 @@ class CreateQuestions < ActiveRecord::Migration[5.2]
       t.string :video
       t.string :picture
       t.string :youtube
+      t.integer:status, null: false, default: 0
 
       t.references :user, foreign_key: true
 

@@ -1,0 +1,36 @@
+<div class="container pt-3">
+   <div class="row">
+   <div class="col-auto mr-auto">
+   <h1>質問一覧</h1>
+   </div>
+     <div class="col-lg-4 offset-lg-1">
+       <!-- 検索フォーム -->
+       <form>
+         <div class="input-group">
+         <select class="custom-select " id="inlineFormCustomSelectPref">
+           <option selected>解決 or 未解決</option>
+           <option value="1">One</option>
+           <option value="2">Two</option>
+            <option value="3">Three</option>
+           </select>
+            <select class="custom-select " id="inlineFormCustomSelectPref">
+           <option selected>タグ</option>
+           <option value="1">One</option>
+           <option value="2">Two</option>
+            <option value="3">Three</option>
+           </select>
+           <input class="form-control" placeholder="検索ワード" type="search" />
+           <div class="input-group-append">
+             <input type="submit" value="検索" class="btn btn-primary" />
+           </div>
+         </div>
+       </form>
+     </div>
+   </div>
+</div>
+
+<% if @questions.present? %>
+           <%= render @questions %>
+         <% else %>
+           <p><%= t('.no_result') %></p>
+         <% end %>
