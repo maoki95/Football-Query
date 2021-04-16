@@ -16,5 +16,14 @@ FactoryBot.define do
     sequence(:title) { |n| "タイトル#{n}" }
     sequence(:body) { |n| "本文#{n}" }
     association :user
+
+    trait :unsolve do
+      status { unsoleve }
+    end
+
+    trait :solve do
+      status { soleve }
+    end
+
   end
 end
