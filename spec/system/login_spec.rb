@@ -11,7 +11,7 @@ RSpec.describe 'ログイン・ログアウト', type: :system do
           fill_in 'Email', with: user.email
           fill_in 'Password', with: '12345678'
           click_button 'ログイン'
-          expect(current_path).to eq root_path
+          expect(current_path).to eq questions_path
           expect(page).to have_content('ログインしました')
         end
       end
@@ -30,7 +30,7 @@ RSpec.describe 'ログイン・ログアウト', type: :system do
 
     describe 'ログアウト' do
       before do
-        login_a
+        login
       end
       it 'ログアウトできること' do
         find('#header-profile').click
