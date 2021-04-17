@@ -16,7 +16,9 @@
           <% end %>
      <% end %>
       <% if question.video.present? %>
-    <%= video_tag question.video.url,controls: true, autobuffer: true, width: "40%", height: "40%"%>
+      <div class="text-right">
+    <i class="fas fa-file-video fa-2x	"></i>
+    </div>
      <% end %>
       </div>
     <div class="text-right">
