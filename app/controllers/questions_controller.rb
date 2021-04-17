@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class QuestionsController < ApplicationController
   skip_before_action :require_login, only: %i[index]
 
@@ -24,5 +26,4 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:title, :body, :video, :picture, :youtube)
   end
-
 end

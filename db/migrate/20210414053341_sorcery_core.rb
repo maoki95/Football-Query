@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class SorceryCore < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
@@ -8,7 +6,7 @@ class SorceryCore < ActiveRecord::Migration[5.2]
       t.string :crypted_password
       t.string :salt
       t.text :introduce
-      t.integer :rank ,null: false, default: 0
+      t.integer :rank, null: false, default: 0
       t.string :avatar
       t.timestamps null: false
     end

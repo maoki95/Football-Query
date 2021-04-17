@@ -9,8 +9,8 @@
 
 20.times do |i|
   Question.create!(
-      user: User.offset(rand(User.count)).first,
-      title: "タイトル#{i}",
-      body: "本文#{i}"
+    user: User.offset(rand(User.count)).first,
+    title: "タイトル#{i}",
+    body: "本文#{i}"
   )
 end

@@ -24,6 +24,5 @@ FactoryBot.define do
     trait :solve do
       status { soleve }
     end
-
   end
 end
