@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 RSpec.describe '質問', type: :system do
