@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_415_014_830) do
+ActiveRecord::Schema.define(version: 2021_04_17_124830) do
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "question_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "question_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_question_categories_on_category_id"
+    t.index ["question_id"], name: "index_question_categories_on_question_id"
+  end
+
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "body", null: false
@@ -37,5 +53,7 @@ ActiveRecord::Schema.define(version: 20_210_415_014_830) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "question_categories", "categories"
+  add_foreign_key "question_categories", "questions"
   add_foreign_key "questions", "users"
 end

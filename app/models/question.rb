@@ -2,6 +2,8 @@ class Question < ApplicationRecord
   mount_uploaders :pictures, PictureUploader
   mount_uploader :video, VideoUploader
   belongs_to :user
+  has_many :question_categories, dependent: :destroy
+  has_many :categories, through: :question_categories
 
   validates :title, presence: true, length: { maximum: 150 }
   validates :body, presence: true, length: { maximum: 10_000 }

@@ -20,20 +20,28 @@
         <div class="text-right">
             <% if question.video.present? %>
             <div class="text-right">
-             <i class="fas fa-file-video fa-2x	"></i>
+             <i class="fas fa-file-video fa-2x" ></i>
             <% end %>
             <% if question.youtube.present? %>
              <i class="fab fa-youtube fa-2x	"></i>
              <% end %>
-             </div>
+             </div>ｑ
         </div>
       </div>
     </div>
     <div class="text-right">
-    <p>タグ   未回答or回答数</p>
-    <%= l question.created_at, format: :long %>
-    </div>
-      </div>
+      <span>【カテゴリ】</span>
+      <% if question.categories.present? %>
+      <% question.categories.each do |category| %>
+        <span class="badge badge-dark"><%= category.name %></span>
+      <% end %>
+      <% else %>
+        <span>なし</span>
+      <% end %>
+      <%= l question.created_at, format: :long %>
+           </div>
+        </div> 
+       </div>
       </div>
     </div>
   </div>
