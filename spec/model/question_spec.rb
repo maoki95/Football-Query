@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Question, type: :model do
-
   context '全てのフィールドが有効な場合' do
     it '有効であること' do
       question = build(:question)
@@ -16,7 +15,7 @@ RSpec.describe Question, type: :model do
       expect(question.errors[:title]).to include('を入力してください')
     end
   end
-  
+
   context '本文が存在しない場合' do
     it '無効であること' do
       question = build(:question, body: nil)
@@ -24,7 +23,6 @@ RSpec.describe Question, type: :model do
       expect(question.errors[:body]).to include('を入力してください')
     end
   end
-
 
   context 'タイトルが150文字以上の場合' do
     it '無効であること' do
@@ -34,10 +32,9 @@ RSpec.describe Question, type: :model do
     end
   end
 
-
   context '本文が10000文字以上の場合' do
     it '無効であること' do
-      question = build(:question, body: 'a' * 10001)
+      question = build(:question, body: 'a' * 10_001)
       expect(question).to be_invalid
       expect(question.errors[:body]).to include('は10000文字以内で入力してください')
     end

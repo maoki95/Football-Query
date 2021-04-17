@@ -1,0 +1,31 @@
+<%= form_with model: question, local: true do |f| %>
+  <div class="form-group">
+  <%= render 'shared/error_messages', object: f.object %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: 'form-control', rows: 5 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :video %>
+    <%= f.file_field :video, class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :pucture %>
+    <%= f.file_field :picture, class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :youtube %>
+    <%= f.text_field :youtube, class: 'form-control'%>
+  </div>
+
+  <div class="text-right">
+  <%= f.submit '質問する', class: 'btn btn-primary' %>
+  </div>
+
+<% end %>

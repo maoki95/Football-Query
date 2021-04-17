@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -9,8 +8,8 @@
 
 20.times do |i|
   Question.create!(
-      user: User.offset(rand(User.count)).first,
-      title: "タイトル#{i}",
-      body: "本文#{i}"
+    user: User.offset(rand(User.count)).first,
+    title: "タイトル#{i}",
+    body: "本文#{i}"
   )
 end
