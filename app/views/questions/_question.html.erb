@@ -10,6 +10,11 @@
       <h3 class="card-title">
       <%= link_to question.title, "#" %></h3>
       <p class="card-text"><%= question.body %></p>
+      <% if question.pictures.present? %>
+      <% question.pictures.each do |picture| %>
+        <%= image_tag (picture.url) %>
+     <% end %>
+     <% end %>
       </div>
     <div class="text-right">
     <p>タグ   未回答or回答数</p>

@@ -24,6 +24,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title, :body, :video, :picture, :youtube)
+    params.require(:question).permit(:title, :body, :video, {pictures: []}, :youtube)
   end
 end
