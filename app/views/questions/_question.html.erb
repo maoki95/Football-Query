@@ -15,6 +15,9 @@
           <%= image_tag picture.url if question.pictures.present?%>
           <% end %>
      <% end %>
+      <% if question.video.present? %>
+    <%= video_tag question.video.url,controls: true, autobuffer: true, width: "40%", height: "40%"%>
+     <% end %>
       </div>
     <div class="text-right">
     <p>タグ   未回答or回答数</p>
