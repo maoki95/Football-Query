@@ -33,36 +33,24 @@ RSpec.describe '質問', type: :system do
       end
       it '質問が新規作成できること' do
         expect do
-        fill_in 'Title', with: 'わかりません'
-        fill_in 'Body', with: '〇〇がわかりません'
-        click_button '質問する'
-         end.to change { Question.count }.by(1)
+          fill_in 'Title', with: 'わかりません'
+          fill_in 'Body', with: '〇〇がわかりません'
+          click_button '質問する'
+        end.to change { Question.count }.by(1)
         expect(current_path).to eq('/questions')
         expect(page).to have_content('質問を投稿しました')
       end
- 
-     it '画像付き質問が新規作成できること' do
+
+      it '画像付き質問が新規作成できること' do
         expect do
-         fill_in 'Title', with: 'わかりません'
-         fill_in 'Body', with: '〇〇がわかりません'
-         file_path = Rails.root.join('spec', 'fixtures', 'sample.jpg')
+          fill_in 'Title', with: 'わかりません'
+          fill_in 'Body', with: '〇〇がわかりません'
+          file_path = Rails.root.join('spec', 'fixtures', 'sample.jpg')
           attach_file "Picture", file_path
           click_button '質問する'
-          end.to change { Question.count }.by(1)
-          expect(current_path).to eq('/questions')
-         expect(page).to have_content('質問を投稿しました')
-      end
-      it '複数画像付き質問が新規作成できること' do
-        expect do
-         fill_in 'Title', with: 'わかりません'
-         fill_in 'Body', with: '〇〇がわかりません'
-         file_path = Rails.root.join('spec', 'fixtures', 'sample.jpg')
-         file_path = Rails.root.join('spec', 'fixtures', 'sample.jpg')
-          attach_file "Picture", file_path
-          click_button '質問する'
-          end.to change { Question.count }.by(1)
-          expect(current_path).to eq('/questions')
-         expect(page).to have_content('質問を投稿しました')
+        end.to change { Question.count }.by(1)
+        expect(current_path).to eq('/questions')
+        expect(page).to have_content('質問を投稿しました')
       end
     end
   end

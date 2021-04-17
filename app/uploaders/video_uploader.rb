@@ -2,7 +2,7 @@ class VideoUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
-  #process resize_to_fill: [100,100]
+  # process resize_to_fill: [100,100]
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -36,9 +36,9 @@ class VideoUploader < CarrierWave::Uploader::Base
 
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-   def extension_allowlist
-     %w(MOV wmv mp4)
-   end
+  def extension_allowlist
+    %w[MOV wmv mp4]
+  end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
