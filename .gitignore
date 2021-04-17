@@ -30,4 +30,4 @@
 /vendor
 /config/database.yml
 
-app/images
+/public/uploads/

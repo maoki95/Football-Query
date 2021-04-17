@@ -24,16 +24,34 @@ RSpec.describe '質問', type: :system do
       end
     end
   end
-  context '入力情報正常系' do
-    it '質問が新規作成できること' do
-      login
-      visit '/questions/new'
-      expect do
-        fill_in 'Title', with: 'わかりません'
-        fill_in 'Body', with: '〇〇がわかりません'
-        click_button '質問する'
-      end.to change { Question.count }.by(1)
-      expect(page).to have_content('質問を投稿しました')
+  describe '入力情報正常系' do
+    context 'ログインしている場合' do
+      before do
+        login
+        find('#header-profile').click
+        click_on('質問する')
+      end
+      it '質問が新規作成できること' do
+        expect do
+          fill_in 'Title', with: 'わかりません'
+          fill_in 'Body', with: '〇〇がわかりません'
+          click_button '質問する'
+        end.to change { Question.count }.by(1)
+        expect(current_path).to eq('/questions')
+        expect(page).to have_content('質問を投稿しました')
+      end
+
+      it '画像付き質問が新規作成できること' do
+        expect do
+          fill_in 'Title', with: 'わかりません'
+          fill_in 'Body', with: '〇〇がわかりません'
+          file_path = Rails.root.join('spec', 'fixtures', 'sample.jpg')
+          attach_file "Picture", file_path
+          click_button '質問する'
+        end.to change { Question.count }.by(1)
+        expect(current_path).to eq('/questions')
+        expect(page).to have_content('質問を投稿しました')
+      end
     end
   end
 

@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20_210_415_014_830) do
     t.string "title", null: false
     t.text "body", null: false
     t.string "video"
-    t.string "picture"
+    t.json "pictures"
     t.string "youtube"
     t.integer "status", default: 0, null: false
     t.bigint "user_id"

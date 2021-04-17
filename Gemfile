@@ -30,7 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'carrierwave'
+gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -67,6 +68,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'bootstrap', '~> 4.1.1'
+gem 'font-awesome-sass', '~> 5.12.0'
 gem 'jquery-rails'
 
 gem 'sorcery'

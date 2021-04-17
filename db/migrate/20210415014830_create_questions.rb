@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration[5.2]
       t.string :title, null: false
       t.text :body,    null: false
       t.string :video
-      t.string :picture
+      t.json :pictures
       t.string :youtube
       t.integer :status, null: false, default: 0
 

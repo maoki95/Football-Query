@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-20.times do |i|
+10.times do |i|
   Question.create!(
     user: User.offset(rand(User.count)).first,
     title: "タイトル#{i}",
