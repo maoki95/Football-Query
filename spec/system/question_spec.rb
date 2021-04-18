@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe '質問', type: :system do
   let(:question) { create(:question) }
   let(:user_question) { create(:board, user: user) }
+  let(:category) { create(:category) }
 
   describe '質問の表示' do
     describe '質問の一覧' do
@@ -50,6 +51,18 @@ RSpec.describe '質問', type: :system do
           click_button '質問する'
         end.to change { Question.count }.by(1)
         expect(current_path).to eq('/questions')
+        expect(page).to have_content('質問を投稿しました')
+      end
+      it 'カテゴリー付き質問が新規作成できること' do
+        category
+        expect do
+          fill_in 'Title', with: 'わかりません'
+          fill_in 'Body', with: '〇〇がわかりません'
+          check "RB"
+          click_button '質問する'
+        end.to change { Question.count }.by(1)
+        expect(current_path).to eq('/questions')
+        expect(page).to have_content('RB')
         expect(page).to have_content('質問を投稿しました')
       end
     end

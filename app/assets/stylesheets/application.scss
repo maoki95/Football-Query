@@ -48,7 +48,7 @@ a:active {
 	text-decoration: none;
 	color: inherit;
 }
-input {
+#toggle {
 	display: none;
 }
 /*menuコンテンツ*/
@@ -158,6 +158,10 @@ input {
 .content{
   background-color:  rgba(240,98,146 ,1);
 }
+
+
+
+
 
 *, *:before, *:after {
 	padding: 0;

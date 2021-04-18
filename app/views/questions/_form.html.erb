@@ -23,6 +23,14 @@
     <%= f.label :youtube %>
     <%= f.text_field :youtube, class: 'form-control'%>
   </div>
+  <%= f.label :category %>
+    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %> 
+      <%= category.label do %>
+        <%= category.check_box %>
+        <%= category.text %>
+      <% end %>
+    <% end %>
+
 
   <div class="text-right">
   <%= f.submit '質問する', class: 'btn btn-primary' %>
