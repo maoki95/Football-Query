@@ -8,6 +8,13 @@ class AnswersController < ApplicationController
     end
   end
 
+
+  def destroy
+    @comment = current_user.comments.find(params[:id])
+    @comment.destroy!
+    redirect_to question_path(@answer.question)
+  end
+
   private
 
   def answer_params
