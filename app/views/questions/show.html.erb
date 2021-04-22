@@ -1,52 +1,50 @@
-<div class="container">
-    <div class="row">
-      <div class="col-auto mr-auto">
-       <div class="card" style="width: 45rem;">
-        <div class="card-body">
-         <div class="row">
-          <div class="col-md-4">
-           <h3 class="card-title"><%= @question.title %></h3>
-          </div>
-            <div class="col-md-4 offset-md-4"><%= image_tag 'aaa', size: '40x40', class: 'rounded-circle mr15'%>  <%= @question.user.name %>
-            <%= @question.status %>
-            </div>
-        </div>
-          <p class="card-text"><%=@question.body%></p>
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-md-10 offset-1">
+    <div class="card">
+      <div class="card-body">
+      <div class= "text-right">
+      <%= @question.status %>
       </div>
-   <ul class="list-group list-group-flush">
-      <li class="list-group-item"><% @question.pictures.each do |picture| %>
-      <%= link_to picture.url, 'data-lightbox': picture do%>
-      <%= image_tag picture.url if @question.pictures.present?%>
+    <div class="col-auto mr-auto"> <%= image_tag 'aaa', size: '40x40', class: 'rounded-circle mr15'%>  <%= @question.user.name %>
+      <h3 class="card-title"><%=@question.title%></h3>
+      <p class="card-text"><%= @question.body %></p>
+      <% @question.pictures.each do |picture| %>
+        <%= link_to picture.url, 'data-lightbox': picture do%>
+          <%= image_tag picture.url if @question.pictures.present?%>
+          <% end %>
       <% end %>
-      <% end %>
-      </li>
-        <% if @question.video.present? %>
-        <li class="list-group-item">
-        <%= video_tag @question.video.url,controls: true, autobuffer: true, width: "40%", height: "40%"%>
-        </li>
-        <% end %>
-    <% if @question.youtube.present? %>
-    <li class="list-group-item">
-    <%= content_tag 'iframe', nil, src: "https://www.youtube.com/embed/#{@question.split_id_from_youtube_url}", \
-      frameborder: 0, gesture: 'media', allow: 'encrypted-media', allowfullscreen: true%>
-    </li>
-    <% end %>
-   </ul>
-         <div class="card-body">
-            <div class="text-right">
-               <span>【カテゴリ】</span>
-               <% if @question.categories.present? %>
-               <% @question.categories.each do |category| %>
-               <span class="badge badge-dark"><%= category.name %></span>
-               <% end %>
-               <% else %>
-               <span>なし</span>
-               <% end %>
-               <%= l @question.created_at, format: :long %>
-             </div>
-          </div>
-       </div>
+      <div class="row">
+        <div class="col align-self-end">
+            <% if @question.video.present? %>
+            <%= video_tag @question.video.url,controls: true, autobuffer: true, width: "40%", height: "40%"%>
+            <% end %>
+            <% if @question.youtube.present? %>
+            <%= content_tag 'iframe', nil, src: "https://www.youtube.com/embed/#{@question.split_id_from_youtube_url}",gesture: 'media', allow:"autoplay; fullscreen"%>
+             <% end %>
+        </div>
+      </div>
     </div>
-      <div class="col-auto">comment</div>
-   </div>
+    <div class="text-right">
+      <span>【カテゴリ】</span>
+      <% if @question.categories.present? %>
+      <% @question.categories.each do |category| %>
+        <span class="badge badge-dark"><%= category.name %></span>
+      <% end %>
+      <% else %>
+        <span>なし</span>
+      <% end %>
+      <%= l @question.created_at, format: :long %>
+           </div>
+        </div> 
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class=".col-auto">
+      <!-- アンサーフォーム -->
+      <%= render 'answers/form', { question: @question, answer: @answer } %>
+      <!-- アンサーエリア -->
+      <%= render 'answers/answers', { answers: @answers } %>
 </div>

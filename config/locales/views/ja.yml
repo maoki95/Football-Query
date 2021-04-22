@@ -37,3 +37,7 @@ ja:
    profiles:
      show:
        title: 'プロフィール'
+   answers:
+     create:
+       success: 'コメントしました'
+       fail: 'コメントに失敗しました'
