@@ -13,7 +13,7 @@ RSpec.describe 'アンサー', type: :system do
     end
     describe 'アンサーの一覧' do
       it 'アンサーの一覧が表示されること' do
-        login me
+        login_as_user me
         visit question_path question
         within('#js-table-answer') do
           expect(page).to have_content(answer_by_me.body)
@@ -24,7 +24,7 @@ RSpec.describe 'アンサー', type: :system do
 
     describe 'アンサーの作成' do
       it 'アンサーを作成できること', js: true do
-        login me
+        login_as_user me
         visit question_path question
         fill_in 'アンサー', with: '新規アンサー'
         click_on '答える'
@@ -35,7 +35,7 @@ RSpec.describe 'アンサー', type: :system do
         end
       end
       it 'アンサーの作成に失敗すること', js: true do
-        login me
+        login_as_user me
         visit question_path question
         fill_in 'アンサー', with: ''
         click_on '答える'
@@ -46,7 +46,7 @@ RSpec.describe 'アンサー', type: :system do
     describe 'アンサーの編集' do
       context '他人のアンサーの場合' do
         it '削除ボタンが表示されないこと' do
-          login me
+          login_as_user me
           visit question_path question
           within("#answer-#{answer_by_others.id}") do
             expect(page).not_to have_selector('.js-delete-answer-button')
