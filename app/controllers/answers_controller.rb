@@ -10,9 +10,9 @@ class AnswersController < ApplicationController
 
 
   def destroy
-    @comment = current_user.comments.find(params[:id])
-    @comment.destroy!
-    redirect_to question_path(@answer.question)
+    @answer = current_user.answers.find(params[:id])
+    @answer.destroy!
+    redirect_to question_path(@answer.question), success: t('.success')
   end
 
   private

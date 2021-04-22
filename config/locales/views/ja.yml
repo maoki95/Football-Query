@@ -41,3 +41,5 @@ ja:
      create:
        success: 'コメントしました'
        fail: 'コメントに失敗しました'
+     destroy:
+       success: 'コメントを削除しました'
