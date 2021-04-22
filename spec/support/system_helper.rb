@@ -1,5 +1,5 @@
 module SystemHelper
-  def login
+  def login(user)
     user = create(:user)
     visit '/login'
     fill_in 'Email', with: user.email
