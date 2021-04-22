@@ -1,0 +1,10 @@
+<div class="row mb-3">
+   <div class="col-lg-8 offset-lg-2">
+     <%= form_with model: answer, url: [question, answer], local: true do |f| %>
+       <%= render 'shared/error_messages', object: f.object %>
+       <%= f.label :body,  "アンサー"%>
+       <%= f.text_area :body, class: 'form-control mb-3', id: 'js-new-answer-body', row: 4 %>
+       <%= f.submit '答える', class: 'btn btn-primary', data: { confirm: 'コメントしますか'}%>
+     <% end %>
+   </div>
+ </div>
