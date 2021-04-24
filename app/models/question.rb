@@ -15,4 +15,11 @@ class Question < ApplicationRecord
     # YoutubeならIDのみ抽出
     youtube.split('/').last if youtube?
   end
+
+  def adjust_status
+    if best_answer_id.present?
+        self.solved!
+         end
+  end
+
 end

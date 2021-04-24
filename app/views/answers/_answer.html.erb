@@ -13,19 +13,28 @@
        <button class="btn btn-success js-button-answer-update" data-answer-id="<%= answer.id %>">更新</button>
      </div>
    </td>
-
-   <% if current_user.own?(answer) %>
-     <td class="action">
-       <ul class="list-inline justify-content-center" style="float: right;">
-         <li class="list-inline-item">
+   <td class="action">
+      <div class="text-right">
+   <% if current_user.own?(answer) && @question.best_answer_id != answer.id %>
          <%= link_to answer_path(answer),
          class: 'js-delete-answer-button',
          method: :delete,
-         data: { confirm: 'コメント削除しますか？'}  do %>
+         data: { confirm: 'コメント削除しますか？'} do %>
           <%= icon 'fa', 'trash' %>
           <% end %>
-         </li>
-       </ul>
-     </td>
    <% end %>
+   <% if current_user.own?(@question) && @question.best_answer_id != answer.id %>
+         <%= form_with(model: @question, local: true, data: {confirm: "#{answer.user.name}さんの回答をベストアンサーにします。この修正は変更できません、よろしいですか？"}) do |f| %>
+            <%= f.hidden_field :best_answer_id, value: answer.id %>
+            <div class="actions">
+            <%= button_tag type: "submit", disabled: @question.best_answer_id.present? do %>
+              <i class="fas fa-medal"></i>
+            <% end %>
+            </div>
+            <% end %>
+            <% elsif  @question.best_answer_id == answer.id%>
+            <p>ベストアンサー</p>
+   <% end %>
+   </div>
+   </td>
  </tr>
