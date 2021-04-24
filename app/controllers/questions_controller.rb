@@ -34,7 +34,8 @@ class QuestionsController < ApplicationController
   def update
     @question = current_user.questions.find(params[:id])
     if @question.update(question_params)
-      redirect_to @question, success: '質問を編集しました'
+       @question.adjust_status
+       redirect_to @question, success: '質問を編集しました'
     else
       flash.now['danger'] = '質問の編集に失敗しました'
       render :edit
@@ -50,6 +51,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title, :body, :video, { pictures: [] }, :youtube, category_ids: [])
+    params.require(:question).permit(:title, :body, :video, :best_answer_id, { pictures: [] }, :youtube, category_ids: [])
   end
 end

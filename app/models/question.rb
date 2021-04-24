@@ -15,4 +15,5 @@ class Question < ApplicationRecord
     # YoutubeならIDのみ抽出
     youtube.split('/').last if youtube?
   end
+
 end

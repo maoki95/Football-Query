@@ -44,8 +44,12 @@
   </div>
 </div>
       <div class=".col-auto">
+      <% if current_user.own?(@question) %>
+      <%= render 'answers/answers', { answers: @answers } %>
+      <% else %>
       <!-- アンサーフォーム -->
       <%= render 'answers/form', { question: @question, answer: @answer } %>
       <!-- アンサーエリア -->
       <%= render 'answers/answers', { answers: @answers } %>
+      <% end %>
 </div>
