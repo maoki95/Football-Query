@@ -34,8 +34,8 @@ class QuestionsController < ApplicationController
   def update
     @question = current_user.questions.find(params[:id])
     if @question.update(question_params)
-       @question.adjust_status
-       redirect_to @question, success: '質問を編集しました'
+      @question.adjust_status
+      redirect_to @question, success: '質問を編集しました'
     else
       flash.now['danger'] = '質問の編集に失敗しました'
       render :edit
