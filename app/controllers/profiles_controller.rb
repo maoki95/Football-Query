@@ -14,6 +14,9 @@ class ProfilesController < ApplicationController
 
   def show
     @questions = current_user.questions.all.order(created_at: :desc)
+    answers = current_user.answers
+    aaa = answers.map {|a| a.question.best_answer_id}
+    @best_answer= aaa.uniq
   end
 
   private
