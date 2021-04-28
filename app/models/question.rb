@@ -19,7 +19,7 @@ class Question < ApplicationRecord
   def adjust_status
     if best_answer_id.present?
         self.solved!
-         end
+    end
   end
 
 end

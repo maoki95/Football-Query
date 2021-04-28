@@ -10,8 +10,8 @@
 	<div class="bar"></div>
 </label>
 <div class="menu">
-  <ul>
-    <li><%= link_to "マイページ", "#"%></li>
+	<ul>
+		<li><%= link_to "マイページ", profile_path %></li>
 		<li><%= link_to "質問する", new_question_path %></li>
 		<li><%= link_to "質問一覧",  questions_path %></li>
 		<li><%= link_to "ログアウト", logout_path, method: :delete %></li>

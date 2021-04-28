@@ -30,7 +30,6 @@
             <%= button_tag type: "submit", disabled: @question.best_answer_id.present? do %>
               <i class="fas fa-medal"></i>
             <% end %>
-            </div>
             <% end %>
             <% elsif  @question.best_answer_id == answer.id%>
             <p>ベストアンサー</p>

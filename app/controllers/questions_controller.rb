@@ -45,7 +45,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question = current_user.questions.find(params[:id])
     @question.destroy!
-    redirect_to questions_path, success: '質問を削除しました'
+    redirect_to profile_path, success: '質問を削除しました'
   end
 
   private
