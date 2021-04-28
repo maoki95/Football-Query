@@ -4,7 +4,9 @@ class QuestionsController < ApplicationController
   skip_before_action :require_login, only: %i[index]
 
   def index
-    @questions = Question.all.includes(:user)
+    @q = Question.ransack(params[:q])
+    @category = Category.all
+    @questions = @q.result(distinct: true).includes(:user)
   end
 
   def new
