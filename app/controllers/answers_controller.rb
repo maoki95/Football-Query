@@ -8,7 +8,6 @@ class AnswersController < ApplicationController
     end
   end
 
-
   def destroy
     @answer = current_user.answers.find(params[:id])
     @answer.destroy!

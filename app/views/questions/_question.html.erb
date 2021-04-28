@@ -39,7 +39,9 @@
         <span>なし</span>
       <% end %>
       <%= l question.created_at, format: :long %>
-      <%= render 'crud_menus', question: question if current_user.own?(question) %>
+      <% if logged_in? %>
+      <%= render 'questions/crud_menus', question: question if current_user.own?(question) %>
+      <% end %>
            </div>
         </div> 
        </div>

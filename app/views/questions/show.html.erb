@@ -44,7 +44,8 @@
   </div>
 </div>
       <div class=".col-auto">
-      <% if current_user.own?(@question) %>
+      <% if current_user.own?(@question)  || @question.status == "solved" %>
+      <!-- アンサーエリア -->
       <%= render 'answers/answers', { answers: @answers } %>
       <% else %>
       <!-- アンサーフォーム -->
