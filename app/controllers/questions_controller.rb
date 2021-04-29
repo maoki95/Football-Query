@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
   def index
     @q = Question.ransack(params[:q])
     @category = Category.all
-    @questions = @q.result(distinct: true).includes(:user)
+    @questions = @q.result(distinct: true).includes(:user).page(params[:page])
   end
 
   def new
@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answer = Answer.new
-    @answers = @question.answers.includes(:user).order(created_at: :desc)
+    @answers = @question.answers.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def edit

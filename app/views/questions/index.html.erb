@@ -5,16 +5,18 @@
    </div>
      <div class="col-lg-4 offset-lg-1">
        <!-- 検索フォーム -->
-           <%= render 'search_form' %>
+           <%= render 'question_search_form' %>
+           <div class="float-right">
+           <%= paginate @questions %>
+           </div>
            </div>
          </div>
        </form>
      </div>
-   </div>
-</div>
-
-<% if @questions.present?  %>
+     <% if @questions.present?  %>
            <%= render @questions %>
          <% else %>
            <p>質問がありません</p>
-         <% end %>
+      <% end %>
+   </div>
+</div>
