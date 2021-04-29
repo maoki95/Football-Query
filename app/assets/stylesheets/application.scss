@@ -16,16 +16,37 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-
 body {
   background-image: url(aaa.jpg);
-  background-color:rgba(255,255,255,0.4);
-  //background-blend-mode:lighten;
+  background-color:rgba(255, 255, 255, 0.2);
+  background-blend-mode:lighten;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  color:#FFF;
+}
+
+h1{
+	color: #FFF;
+}
+label{
+	color: #FFF;
+}
+
+tr{
+	color: #FFF;
+}
+
+td{
+	color: #FFF;
+}
+
+th{
+	color: #FFF;
+}
+
+a{
+	color: #FFF;
 }
 
 header {
@@ -159,7 +180,18 @@ a:active {
 }
 
 
+.card-body{
+	color: #333;
+}
 
+.card-header{
+	color: #333;
+}
+
+.card{
+	margin-bottom: 50px;
+	margin-top: 25px;
+}
 
 
 *, *:before, *:after {
@@ -167,22 +199,23 @@ a:active {
 	margin: 0;
 	box-sizing: border-box;
 }
-.contents {
-	color: #FFF;
+html {
+	min-height: 100%;
+	position: relative;
+}
+body {
+	margin-bottom: 5em;
 }
 footer {
-	position: fixed;
 	bottom: 0;
-	display: inline-block;
 	width: 100%;
 	height: 70px;
-	margin: 0;
+	position: absolute;
 	background-color: #9E9E9E;
-	box-shadow: 0 -3px 3px 0 rgba(0,0,0,0.2);
 }
 footer .copyright {
 	float: left;
-	width: 60%;
+	width: 50%;
 }
 footer .copyright p {
 	font-size: 0.7em;
@@ -193,11 +226,9 @@ footer .copyright p {
 }
 footer .sns {
 	float: right;
-	width: 40%;
+	width: 50%;
 }
 footer .sns a {
-	width: 25%;
-	font-size: 1.2em;
 	font-weight: bold;
 	line-height: 70px;
 	float: left;
@@ -212,18 +243,11 @@ footer .sns a:hover {
 	        transition: all, 0.3s;
 	background-color: #222222;
 }
-footer .sns .insta {
-	background-color: #e4405f;
-}
-footer .sns .fb {
-	background-color: #3b5999;
-}
-footer .sns .tw {
-	background-color: #55acee;
-}
 footer .sns .contact {
-  background-color: #26C6DA;
-  float: right;
+	float: right;
+	font-size: 0.8em;
+	width: 40%;
+	background-color: #26C6DA;
 }
 @media (max-width: 480px) {
 	.contents {
@@ -242,17 +266,4 @@ footer .sns .contact {
 	footer .sns {
 		width: 100%;
 	}
-}
-
-.card-body{
-	color: #333;
-}
-
-.card-header{
-	color: #333;
-}
-
-.card{
-	margin-bottom: 50px;
-	margin-top: 25px;
 }
