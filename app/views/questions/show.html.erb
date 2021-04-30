@@ -49,11 +49,11 @@
       <div class=".col-auto">
       <% if current_user.own?(@question)  || @question.status == "solved" %>
       <!-- アンサーエリア -->
-      <%= render 'answers/answers', { answers: @answers } %>
-      <% else %>
+      <%= render 'answers/answer', { answers: @answers } %>
+      <% else%>
       <!-- アンサーフォーム -->
       <%= render 'answers/form', { question: @question, answer: @answer } %>
       <!-- アンサーエリア -->
-      <%= render 'answers/answers', { answers: @answers } %>
+      <%= render 'answers/answer', { answers: @answers } %>
       <% end %>
 </div>
