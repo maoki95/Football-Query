@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
   def index
     @q = Question.ransack(params[:q])
     @category = Category.all
-    @questions = @q.result(distinct: true).includes(:user).page(params[:page])
+    @questions = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
@@ -27,6 +27,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answer = Answer.new
     @answers = @question.answers.includes(:user).order(created_at: :desc).page(params[:page])
+    @answer_reply = @question.answers.new #コメントに対する返信用の変数
   end
 
   def edit
