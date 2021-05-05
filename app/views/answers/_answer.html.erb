@@ -71,7 +71,7 @@
              <textarea class="form-control input-form" name="answer[body]" rows="2"><%=@answer_reply.body%></textarea>
                 <%= f.hidden_field :parent_id, value: answer.id,  id: "#{answer.id}"%>
                 <div class="actions">
-                  <%= f.submit  '返信する', class: "btn btn-primary"%>
+                  <%= f.submit  '返信する', class: "btn btn-outline-secondary"%>
           <% end %>
          </div>
          </div>
