@@ -1,12 +1,22 @@
 <div class="container-fluid">
   <div class="row">
   <div class="col-md-10 offset-1">
-    <div class="card">
+  <h1>質問詳細</h1>
+    <div class="card card-nav-tabs">
+         <div class="card-header card-header-danger">
+         <%= image_tag 'aaa', size: '40x40', class: 'rounded-circle mr15'%>  <%= @question.user.name %>
+     </div>
       <div class="card-body">
       <div class= "text-right">
+      <% if @question.status == "unsolved" %>
+      <span class="badge badge-danger">
       <%= @question.status %>
+      </span>
+      <%else%>
+      <span class="badge badge-success"><%= @question.status %></span>
+      <% end%>
       </div>
-    <div class="col-auto mr-auto"> <%= image_tag 'aaa', size: '40x40', class: 'rounded-circle mr15'%>  <%= @question.user.name %>
+    <div class="col-auto mr-auto"> 
       <h3 class="card-title"><%=@question.title%></h3>
       <p class="card-text"><%= @question.body %></p>
       <% @question.pictures.each do |picture| %>

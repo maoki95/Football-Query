@@ -18,7 +18,7 @@
 
 body {
   background-image: url(ball2.jpg);
-  background-color:rgba(0, 0, 0, 20);
+  background-color:rgba(229, 238, 229, 0.219);
   background-blend-mode:lighten;
   background-position: center center;
   background-repeat: no-repeat;
@@ -26,6 +26,10 @@ body {
   background-attachment: fixed;
 }
 
+
+h1{
+	color:#FFF;
+}
 h1.navbar-brand{
 	font-size: 40px;
 }
@@ -167,7 +171,6 @@ a:active {
 
 
 *, *:before, *:after {
-	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 }
@@ -248,3 +251,26 @@ footer .sns .contact {
 		width: 100%;
 	}
 }
+
+
+.card-title {
+	position: relative;
+	padding: .3em;
+	border-bottom: 1px solid #7986CB;
+}
+.card-title::after {
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	z-index: 2;
+	content: '';
+	width: 15%;
+	height: 5px;
+	background-color: #303F9F;
+}
+
+div.card.card-nav-tabs{
+margin-top:50px;
+}
+
+
