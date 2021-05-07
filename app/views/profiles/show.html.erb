@@ -2,18 +2,19 @@
    <div class="row">
      <div class="col-md-10 offset-md-1">
        <h1 class="float-left mb-5">プロフィール</h1>
-       <%= link_to '編集', edit_profile_path, class: 'btn btn-outline-info float-right' %>
-       <table class="table table-dark">
-         <tr>
-           <th scope="row">Email</th>
-           <td><%= current_user.email %></td>
-         </tr>
-         <tr>
-           <th scope="row">Name</th>
+       <table class="table">
+       <tr>
+           <th scope="row">名前</th>
            <td><%= current_user.name %></td>
          </tr>
+         <% if current_user %>
          <tr>
-           <th scope="row">Introduce</th>
+           <th scope="row">Eメール</th>
+           <td><%= current_user.email %></td>
+         </tr>
+         <%end%>
+         <tr>
+           <th scope="row">自己紹介</th>
            <td><%= current_user.introduce %></td>
          </tr>
          <tr>
@@ -21,10 +22,13 @@
             <td><%= @best_answer.count %></td>
           </tr>
           <tr>
-           <th scope="row">Avatar</th>
-           <td><%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '50x50' %></td>
+           <th scope="row">アバター</th>
+           <td><%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '70x70' %></td>
          </tr>
        </table>
+       <div class="text-right">
+       <%= link_to '編集', edit_profile_path, class: 'btn btn-success'%>
+       </div>
       </div>
       <h1>自分の質問</h1>
    </div>

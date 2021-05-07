@@ -1,11 +1,11 @@
 <ul class='crud-menu-btn list-inline float-right'>
    <li class="list-inline-item">
      <%= link_to edit_question_path(question), id: "button-edit-#{question.id}" do %>
-     <i class="fas fa-edit fa-2x"></i>
+     <i class="fas fa-edit fa-lg"></i>
      <% end %>
    </li>
-   <li class="list-inline-item">
+    <li class="list-inline-item">
      <%= link_to question_path(question), id: "button-delete-#{question.id}", method: :delete, data: { confirm: '質問を削除しますか'} do %>
-     <i class="fas fa-trash-alt fa-2x"></i>
+     <i class="fas fa-trash-alt fa-lg"></i>
      <% end %>
    </li>
