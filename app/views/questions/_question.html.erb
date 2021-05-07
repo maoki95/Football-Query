@@ -11,10 +11,10 @@
       <div class= "text-right">
       <% if question.status == "unsolved" %>
       <span class="badge badge-danger">
-      <%= question.status %>
+      <%= question.status_i18n %>
       </span>
       <%else%>
-      <span class="badge badge-success"><%= question.status %></span>
+      <span class="badge badge-success"><%= question.status_i18n %></span>
       <% end%>
       </div>
     <div class="col-auto mr-auto"> 
