@@ -19,25 +19,21 @@
       </div>
     <div class="col-auto mr-auto"> 
       <h2 class="card-title"><%= link_to question.title, question_path(question) %></h2>
+      <div class="text-right">
+      <% if question.video.present? %>
+      <div class="text-right">
+       <i class="fas fa-file-video fa-2x" ></i>
+      <% end %>
+      <% if question.youtube.present? %>
+       <i class="fab fa-youtube fa-2x"></i>
+       <% end %>
+       </div>
       <p class="card-text"><%= question.body %></p>
       <% question.pictures.each do |picture| %>
         <%= link_to picture.url, 'data-lightbox': picture do%>
           <%= image_tag picture.url if question.pictures.present?%>
           <% end %>
       <% end %>
-      <div class="row">
-        <div class="col align-self-end">
-        <div class="text-right">
-            <% if question.video.present? %>
-            <div class="text-right">
-             <i class="fas fa-file-video fa-2x" ></i>
-            <% end %>
-            <% if question.youtube.present? %>
-             <i class="fab fa-youtube fa-2x	"></i>
-             <% end %>
-             </div>
-        </div>
-      </div>
     </div>
     <div class="text-right">
       <span>【カテゴリ】</span>

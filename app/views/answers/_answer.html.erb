@@ -46,7 +46,10 @@
                class: 'js-delete-answer-button',
                method: :delete,
                 data: { confirm: 'コメント削除しますか？'} do %>
-                <%= icon 'fa', 'trash' %>
+                 <span class="fa-stack fa-1x">
+                 <i class="fas fa-circle fa-stack-2x"></i>
+                 <i class="fas fa-trash-alt fa-stack-1x fa-inverse"></i>
+               </span>
             <% end %>
           <% end %>
           <% if current_user.own?(@question) && @question.best_answer_id != answer.id %>

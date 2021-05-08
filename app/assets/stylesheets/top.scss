@@ -51,7 +51,6 @@ button.btn {
   letter-spacing: 0.1em;
   border-radius: 0.5rem;
   margin-right: 40px; 
-  top:420px;
 }
 
 a.btn-border-shadow {
@@ -225,7 +224,7 @@ main {
 
   ody { font: 400 1em/1.5 "Neuton"; background: #090d00; color: rgba(255,255,255,.25); text-align: center; margin: 0 }
 
-p {
+div.top {
   text-transform: uppercase;
   letter-spacing: .5em;
   display: inline-block;
@@ -271,4 +270,9 @@ p {
 @-webkit-keyframes aitf {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
+}
+
+
+.main_button{
+	margin-top:500px;
 }

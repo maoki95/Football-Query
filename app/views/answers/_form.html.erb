@@ -1,9 +1,13 @@
+
+
 <div class="row mb-3">
    <div class="col-lg-8 offset-lg-2">
+   <div class="card w-100">
+   <div class="card-body">
      <%= form_with model: answer, url: [question, answer], local: true do |f| %>
        <%= render 'shared/error_messages', object: f.object %>
        <div class="answer.title">
-       <%= f.label :body, "アンサー"%>
+       <%= f.label :body, "アンサー",class:"answer.title"%>
        </div>
        <div class="form-group has-success">
        <%= f.text_area :body, class: 'form-control mb-3', id: 'js-new-answer-body', row: 4 %>
@@ -12,5 +16,7 @@
        <%= f.submit '答える', class: 'btn btn-success', data: { confirm: 'コメントしますか'}%>
        </div>
      <% end %>
+       </div>
+    </div>
    </div>
  </div>

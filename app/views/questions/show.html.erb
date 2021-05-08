@@ -32,7 +32,7 @@
             <%= video_tag @question.video.url,controls: true, autobuffer: true, width: "40%", height: "40%"%>
             <% end %>
             <% if @question.youtube.present? %>
-            <%= content_tag 'iframe', nil, src: "https://www.youtube.com/embed/#{@question.split_id_from_youtube_url}",gesture: 'media', allow:"autoplay; fullscreen"%>
+            <%= content_tag 'iframe', nil, src: "https://www.youtube.com/embed/#{@question.split_id_from_youtube_url}", allow:"autoplay; fullscreen"%>
              <% end %>
         </div>
       </div>

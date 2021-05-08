@@ -17,7 +17,7 @@
 @import 'font-awesome';
 
 body {
-  background-image: url(QB.jpg);
+  background-image: url(aaa.jpg);
   background-color:rgba(229, 238, 229, 0.219);
   background-position: center center;
   background-repeat: no-repeat;
@@ -164,7 +164,7 @@ a:active {
 	height: 4px;
 	margin: 10px auto;
 	transition: all 0.3s ease-in-out;
-	background-color: rgb(211, 236, 67);
+	background-color: rgb(195, 247, 9);
 }
 .cp_fullscreenmenu .hamburger .bar:nth-child(2) {
 	width: 30px;
@@ -268,7 +268,7 @@ h2.navbar-brand{
 }
 main {
 	flex: 1;
-	margin-top:100px;
+	margin-top:80px;
 }
 
 
@@ -354,14 +354,6 @@ div.answer.title {
   border: 3px dotted #000;
 }
 
-i.fas.fa-medal{
-  color:#e4562a; /*青色にする*/
-}
-
-i.fas.fa-circle{
-	color:#38be33;
-}
-
 
 input.btn-border {
   border: 2px solid #000;
@@ -374,4 +366,26 @@ input.btn-border {
 input.btn-border:hover {
   -webkit-box-shadow: -4px -4px 0 #000;
   box-shadow: -4px -4px 0 #000;
+}
+
+i.fab.fa-youtube{
+	color:#e4562a;
+}
+
+i.fas.fa-file-video {
+	color:#2268a1;
+}
+
+
+i.fas.fa-medal{
+  color:#df4212;
+}
+
+i.fas.fa-circle{
+	color:#38be33;
+}
+
+
+label.answer\.title{
+	font-size: 30px;
 }
