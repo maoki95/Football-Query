@@ -52,12 +52,10 @@
           <% if current_user.own?(@question) && @question.best_answer_id != answer.id %>
             <%= form_with(model: @question, local: true, data: {confirm: "#{answer.user.name}さんの回答をベストアンサーにします。この修正は変更できません、よろしいですか？"}) do |f| %>
                <%= f.hidden_field :best_answer_id, value: answer.id %>
-               <%= button_tag type: "submit", disabled: @question.best_answer_id.present? do %>
-                <i class="fas fa-medal"></i>
-               <% end %>
+               <%= f.submit "ベストアンサーに選ぶ",class:"btn btn-border" unless @question.best_answer_id.present? %>
             <% end %>
                <% elsif  @question.best_answer_id == answer.id%>
-               <p>ベストアンサー</p>
+               <p><i class="fas fa-medal fa-4x"></i></p>
           <% end %>
           <p>
           <a  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
