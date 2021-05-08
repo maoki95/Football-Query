@@ -19,11 +19,15 @@
          </tr>
          <tr>
             <th scope="row">ベストアンサー数</th>
-            <td><%= @best_answer.count %></td>
+            <td><%= @best_answer.count{ |num| !num.nil? } %></td>
           </tr>
           <tr>
            <th scope="row">アバター</th>
            <td><%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '70x70' %></td>
+         </tr>
+         <tr>
+           <th scope="row">ランク</th>
+           <td><%= current_user.rank %></td>
          </tr>
        </table>
        <div class="text-right">

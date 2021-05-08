@@ -54,7 +54,7 @@
           <% end %>
           <% if current_user.own?(@question) && @question.best_answer_id != answer.id %>
             <%= form_with(model: @question, local: true, data: {confirm: "#{answer.user.name}さんの回答をベストアンサーにします。この修正は変更できません、よろしいですか？"}) do |f| %>
-               <%= f.hidden_field :best_answer_id, value: answer.id %>
+               <%= f.hidden_field  :best_answer_id, value: answer.id, id:"answer#{answer.id}" %>
                <%= f.submit "ベストアンサーに選ぶ",class:"btn btn-border" unless @question.best_answer_id.present? %>
             <% end %>
                <% elsif  @question.best_answer_id == answer.id%>
