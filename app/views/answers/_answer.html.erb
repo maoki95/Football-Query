@@ -28,9 +28,12 @@
                <div> 
                <div>---------------------------------------------------------------------------------------------------------------------</div>
                 <%= image_tag 'aaa.jpg', class: 'rounded-circle', size: '40x40' %>
-                <h5><%= reply.user.name %></h5>
+                <h3><%= reply.user.name %></h3>
                </div>
                <%= simple_format(reply.body) %>
+               <div class="text-right">
+               <p><%= l reply.created_at, format: :long %> </p>
+               </div>
             <% end %>
             </div>
             </div>
@@ -65,9 +68,10 @@
           <i class="fas fa-reply">返信</i>
             </a>
            </p>
+           <p><%= l answer.created_at, format: :long %> </p>
          <div class="collapse" id="collapseExample">
          <div class="card card-body">
-         <%= form_with(model:[@question,@answer_reply]) do |f| %>
+         <%= form_with(model:[@question,@answer_reply], local: true, data: {confirm: "#{answer.user.name}さんへコメントしますか？"}) do |f| %>
             <p><label>アンサー返信フォーム</label></p>
             <div class="form-group has-success">
              <textarea class="form-control input-form" name="answer[body]" rows="2"><%=@answer_reply.body%></textarea>

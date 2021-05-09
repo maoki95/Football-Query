@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: %i[edit update]
+  before_action :set_user, only: %i[edit update show]
 
   def edit; end
 
@@ -13,10 +13,16 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @questions = current_user.questions.all.order(created_at: :desc)
+    @questions = current_user.questions.all.includes(:categories).order(created_at: :desc)
     answers = current_user.answers
-    aaa = answers.map {|a| a.question.best_answer_id}
-    @best_answer = aaa.uniq
+    @best_answer = Question.where(best_answer_id: @user.answers.ids)
+
+    if @best_answer.count >= 2
+      current_user.Silver!
+    elsif @best_answer.count >= 5
+      current_user.rank.Gold!
+    end
+
   end
 
   private

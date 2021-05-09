@@ -4,6 +4,8 @@
        <h1>ユーザー編集</h1>
        <%= form_with model: @user, url: profile_path, local: true do |f| %>
          <%= render 'shared/error_messages', object: f.object %>
+         <div class="card w-100">
+        <div class="card-body">
          <div class="form-group has-success">
          <%= f.label :email %>
          <%= f.email_field :email, class: 'form-control mb-3' %>
@@ -33,6 +35,8 @@
          <%= f.submit class: 'btn btn-success'%>
          </div>
        <% end %>
+       </div>
+  </div>
      </div>
    </div>
  </div>
