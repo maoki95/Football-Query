@@ -1,0 +1,6 @@
+ja:
+  enums:
+    question:
+      status:
+        unsolved: "未解決"
+        solved: "解決"

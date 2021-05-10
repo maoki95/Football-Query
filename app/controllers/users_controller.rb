@@ -7,10 +7,15 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def index
+    @users = User.all.page(params[:page])
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path, success: t('.success')
+      auto_login(@user)
+      redirect_to profile_path, success: t('.success')
     else
       flash.now[:danger] = t('.fail')
       render :new

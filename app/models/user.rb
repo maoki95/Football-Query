@@ -15,6 +15,8 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
   validates :introduce, length: { maximum: 150 }
 
+  enum rank: { Bronze: 0, Silver: 1 , Gold: 2}
+
   def own?(object)
     id == object.user_id
   end

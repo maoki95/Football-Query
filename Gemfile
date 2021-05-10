@@ -74,5 +74,6 @@ gem 'jquery-rails'
 gem 'sorcery'
 
 gem 'rails-i18n', '5.1.3'
+gem 'enum_help' 
 gem 'ransack'
 gem 'kaminari'

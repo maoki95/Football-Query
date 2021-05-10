@@ -1,39 +1,39 @@
 <%= form_with model: question, local: true do |f| %>
-  <div class="form-group">
   <%= render 'shared/error_messages', object: f.object %>
-    <%= f.label :title %>
+  <div class="card w-100">
+        <div class="card-body">
+  <div class="form-group has-success">
+    <%= f.label :"タイトル(必須)" %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
-  <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control', rows: 5 %>
+  <div class="form-group has-success">
+    <%= f.label :"詳細(必須）" %>
+    <%= f.text_area :body, class: 'form-control', rows: 3 %>
   </div>
-
-  <div class="form-group">
-    <%= f.label :video %>
-    <%= f.file_field :video, class: 'form-control',accept:'video/*'%>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :pictures %>
+  
+    <%= f.label :'画像 (複数枚可)'%>
     <%= f.file_field :pictures, class: 'form-control mb-3', multiple: true %>
-   </div>
 
-  <div class="form-group">
-    <%= f.label :youtube %>
+    <%= f.label :動画%>
+    <%= f.file_field :video, class: 'form-control',accept:'video/*'%>
+
+  <div class="form-group has-success">
+    <%= f.label :Youtube%>
     <%= f.text_field :youtube, class: 'form-control'%>
   </div>
-  <%= f.label :category %>
+ 
+  <%= f.label :カテゴリー%>
     <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %> 
-      <%= category.label do %>
-        <%= category.check_box %>
+       <%= category.label do %>
+        <%= category.check_box%>
         <%= category.text %>
       <% end %>
     <% end %>
 
-
   <div class="text-right">
-  <%= f.submit '質問する', class: 'btn btn-primary' %>
+  <%= f.submit '質問する', class: 'btn btn-success' %>
   </div>
 
 <% end %>
+</div>
+</div>

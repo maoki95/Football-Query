@@ -1,10 +1,14 @@
 <%= search_form_for @q do |f| %>
   <div class="input-group mb-3">
-    <%= f.select :status_eq,  options_for_select({'unsolved': 0, 'solved': 1}),include_blank: 'ステータス'%>
+  <div class="cp_ipselect cp_sl03">
+    <%= f.select :status_eq,  options_for_select({'未解決': 0, '解決': 1}),include_blank: 'ステータス'%>
+    </div>
+    <div class="cp_ipselect cp_sl03">
     <%= f.select :categories_name_eq,options_from_collection_for_select(@category, :name, :name),include_blank: 'カテゴリー'%>
+    </div>
     <%= f.search_field :title_or_body_cont, class: 'form-control', placeholder: '検索' %>
     <div class="input-group-append">
-      <%= f.submit class: 'btn btn-primary' %>
+      <%= f.submit class: 'btn btn-success' %>
     </div>
   </div>
 <% end %>

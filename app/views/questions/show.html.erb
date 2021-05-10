@@ -1,12 +1,34 @@
 <div class="container-fluid">
   <div class="row">
   <div class="col-md-10 offset-1">
-    <div class="card">
+  <h1>質問詳細</h1>
+    <div class="card card-nav-tabs">
+         <div class="card-header card-header-danger">
+         <div class="row">
+         <% if @question.user.rank == "Silver"%>
+         <%= image_tag @question.user.avatar.url, class: 'rounded-circle', size: '70x70' ,style:"border: 5px solid 
+         #c0c0c0"%>
+         <% elsif @question.user.rank == "Bronze"%>
+        <%= image_tag @question.user.avatar.url, class: 'rounded-circle', size: '70x70' ,style:"border: 5px solid 
+         #b87333"%>
+         <% elsif @question.user.rank == "Gold"%>
+         <%= image_tag @question.user.avatar.url, class: 'rounded-circle', size: '70x70' ,style:"border: 5px solid 
+         #e6b422"%>
+         <% end%>
+         <h3 class="question_name"><%= @question.user.name %></h3>
+         </div>
+     </div>
       <div class="card-body">
       <div class= "text-right">
-      <%= @question.status %>
+      <% if @question.status == "unsolved" %>
+      <span class="badge badge-danger">
+      <%= @question.status_i18n %>
+      </span>
+      <%else%>
+      <span class="badge badge-success"><%= @question.status_i18n%></span>
+      <% end%>
       </div>
-    <div class="col-auto mr-auto"> <%= image_tag 'aaa', size: '40x40', class: 'rounded-circle mr15'%>  <%= @question.user.name %>
+    <div class="col-auto mr-auto"> 
       <h3 class="card-title"><%=@question.title%></h3>
       <p class="card-text"><%= @question.body %></p>
       <% @question.pictures.each do |picture| %>
@@ -20,7 +42,7 @@
             <%= video_tag @question.video.url,controls: true, autobuffer: true, width: "40%", height: "40%"%>
             <% end %>
             <% if @question.youtube.present? %>
-            <%= content_tag 'iframe', nil, src: "https://www.youtube.com/embed/#{@question.split_id_from_youtube_url}",gesture: 'media', allow:"autoplay; fullscreen"%>
+            <%= content_tag 'iframe', nil, src: "https://www.youtube.com/embed/#{@question.split_id_from_youtube_url}", allow:"autoplay; fullscreen"%>
              <% end %>
         </div>
       </div>
