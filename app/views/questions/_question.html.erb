@@ -4,7 +4,17 @@
        <div class="card card-nav-tabs">
          <div class="card-header card-header-danger">
          <div class="row">
-         <%= image_tag question.user.avatar.url, size: '60x60', class: 'rounded-circle mr15'%>  <h3 class="question_name"><%= question.user.name %></h3>
+         <% if question.user.rank == "Silver"%>
+           <%= image_tag question.user.avatar.url, class: 'rounded-circle', size: '70x70' ,style:"border: 5px solid 
+           #c0c0c0"%>
+           <% elsif question.user.rank == "Bronze"%>
+          <%= image_tag question.user.avatar.url, class: 'rounded-circle', size: '70x70' ,style:"border: 5px solid 
+           #b87333"%>
+           <% elsif question.user.rank == "Gold"%>
+           <%= image_tag question.user.avatar.url, class: 'rounded-circle', size: '70x70' ,style:"border: 5px solid 
+           #e6b422"%>
+           <% end %>
+         <h3 class="question_name"><%= question.user.name %></h3>
          </div>
      </div>
       <div class="card-body">
@@ -56,4 +66,5 @@
     </div>
   </div>
   </div>
+</div>
 </div>

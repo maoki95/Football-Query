@@ -1,6 +1,18 @@
   <tbody>
     <tr>
-      <td><%= image_tag user.avatar.url, class: 'rounded-circle', size: '100x100'%><h2><%= user.name%></h2></td>
+      <td>
+      <% if user.rank == "Silver"%>
+           <%= image_tag user.avatar.url, class: 'rounded-circle', size: '100x100' ,style:"border: 5px solid 
+           #c0c0c0"%>
+           <% elsif user.rank == "Bronze"%>
+          <%= image_tag user.avatar.url, class: 'rounded-circle', size: '100x100' ,style:"border: 5px solid 
+           #b87333"%>
+           <% elsif user.rank == "Gold"%>
+           <%= image_tag user.avatar.url, class: 'rounded-circle', size: '100x100' ,style:"border: 5px solid 
+           #e6b422"%>
+           <% end %>
+      <h2><%= user.name%></h2>
+      </td>
       <td><%= user.introduce%></td>
       <td><%= user.rank%></td>
     </tr>
