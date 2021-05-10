@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'use' =>'use#use'
 
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create index]
   resources :questions do
     resources :answers, only: %i[create destroy], shallow: true
   end
