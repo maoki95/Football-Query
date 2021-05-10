@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   post 'login' => 'user_sessions#create'
   delete 'logout' => 'user_sessions#destroy'
 
+  get 'inquiry' => 'inquiries#index'              # 入力画面
+  post 'inquiry/confirm' => 'inquiries#confirm'   # 確認画面
+  post 'inquiry/thanks' => 'inquiries#thanks'     # 送信完了画面
+
+
   get 'use' =>'use#use'
 
   resources :users, only: %i[new create index]
