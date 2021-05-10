@@ -17,9 +17,9 @@ class ProfilesController < ApplicationController
     answers = current_user.answers
     @best_answer = Question.where(best_answer_id: @user.answers.ids)
 
-    if @best_answer.count >= 2
+    if @best_answer.count >= 3
       current_user.Silver!
-    elsif @best_answer.count >= 5
+    elsif @best_answer.count >= 7
       current_user.rank.Gold!
     end
 
