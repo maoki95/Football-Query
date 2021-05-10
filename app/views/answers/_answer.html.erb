@@ -7,7 +7,7 @@
         <% next %>
       <% end %>
       <td style="width: 80px">
-       <%= image_tag 'aaa.jpg', class: 'rounded-circle', size: '60x60' %>
+       <%= image_tag answer.user.avatar.url, class: 'rounded-circle', size: '60x60' %>
       </td>
       <td>
         <h3><%= answer.user.name %></h3>
@@ -27,7 +27,7 @@
              <% answer.replies.each do |reply| %>
                <div> 
                <div>---------------------------------------------------------------------------------------------------------------------</div>
-                <%= image_tag 'aaa.jpg', class: 'rounded-circle', size: '40x40' %>
+                <%= image_tag answer.user.avatar.url, class: 'rounded-circle', size: '50x50' %>
                 <h3><%= reply.user.name %></h3>
                </div>
                <%= simple_format(reply.body) %>

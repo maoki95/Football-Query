@@ -5,7 +5,7 @@
     <div class="card card-nav-tabs">
          <div class="card-header card-header-danger">
          <div class="row">
-         <%= image_tag 'aaa', size: '60x60', class: 'rounded-circle mr15'%>  <h3 class="question_name"><%= @question.user.name %></h3>
+         <%= image_tag @question.user.avatar.url, size: '60x60', class: 'rounded-circle mr15'%>  <h3 class="question_name"><%= @question.user.name %></h3>
          </div>
      </div>
       <div class="card-body">
