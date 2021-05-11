@@ -1,9 +1,10 @@
 class InquiriesController < ApplicationController
+  skip_before_action :require_login, only: %i[index confirm thanks]
 
   def index
     # 入力画面を表示
     @inquiry = Inquiry.new
-    render :action => 'index'
+    render :index
   end
  
   def confirm
@@ -11,10 +12,10 @@ class InquiriesController < ApplicationController
     @inquiry = Inquiry.new(inquiry_params)
     if @inquiry.valid?
       # OK。確認画面を表示
-      render :action => 'confirm'
+      render :confirm
     else
       # NG。入力画面を再表示
-      render :action => 'index'
+      render :index
     end
   end
  
@@ -24,7 +25,7 @@ class InquiriesController < ApplicationController
     InquiryMailer.received_email(@inquiry).deliver
  
     # 完了画面を表示
-    render :action => 'thanks'
+    render :thanks
   end
 
   def inquiry_params

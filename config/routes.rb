@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post 'inquiry/confirm' => 'inquiries#confirm'   # 確認画面
   post 'inquiry/thanks' => 'inquiries#thanks'     # 送信完了画面
 
+  get 'privacy_policy' => 'terms#privacy_policy'
+  get 'terms_of_use' => 'terms#terms_of_use'
 
   get 'use' =>'use#use'
 
