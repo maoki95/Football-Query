@@ -142,8 +142,8 @@ a:active {
 	opacity: 0;
 }
 .cp_fullscreenmenu #toggle:checked + label.hamburger .bar:nth-child(1) {
-	-webkit-transform: translateY(10px) rotate(45deg);
-	        transform: translateY(10px) rotate(45deg);
+	-webkit-transform: translateY(20px) rotate(45deg);
+	        transform: translateY(20px) rotate(45deg);
 }
 .cp_fullscreenmenu #toggle:checked + label.hamburger .bar:nth-child(3) {
 	-webkit-transform: translateY(-8px) rotate(-45deg);
@@ -155,19 +155,19 @@ a:active {
 	position: fixed;
 	z-index: 10;
 	top: 10px;
-	right: 25px;
+	right: 35px;
 	display: block;
 	cursor: pointer;
 }
 .cp_fullscreenmenu .hamburger .bar {
-	width: 40px;
-	height: 4px;
-	margin: 10px auto;
+	width: 60px;
+	height: 5px;
+	margin: 15px auto;
 	transition: all 0.3s ease-in-out;
-	background-color: rgb(195, 247, 9);
+	background-color: rgb(231, 135, 10);
 }
 .cp_fullscreenmenu .hamburger .bar:nth-child(2) {
-	width: 30px;
+	width: 50px;
 }
 .content{
   background-color:  rgba(240,98,146 ,1);
@@ -381,6 +381,21 @@ i.fas.fa-medal{
 
 i.fas.fa-circle{
 	color:#38be33;
+
+}
+
+i.fas.fa-reply{
+  color:#ffffff;
+  background: #38be33;
+  border: solid 3px #38be33;/*線*/
+  border-radius: 5px;/*角の丸み*/
+}
+
+i.fas.fa-comment-dots{
+  color:#ffffff;
+  background: #38be33;
+  border: solid 3px #38be33;/*線*/
+  border-radius: 5px;/*角の丸み*/
 }
 
 
