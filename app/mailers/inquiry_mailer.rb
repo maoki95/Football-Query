@@ -1,6 +1,6 @@
 class InquiryMailer < ApplicationMailer
 
-  default to: ENV['TOMAIL']    # 送信先アドレス
+  default to: ENV['TOMAIL']
  
   def received_email(inquiry)
     @inquiry = inquiry

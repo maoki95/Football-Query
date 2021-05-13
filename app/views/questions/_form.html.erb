@@ -1,7 +1,7 @@
 <%= form_with model: question, local: true do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="card w-100">
-        < class="card-body">
+  <div class="card-body">
   <div class="form-group has-success">
     <%= f.label :title,"タイトル(必須)" %>
     <%= f.text_field :title, class: 'form-control' %>
@@ -29,9 +29,9 @@
         <%= category.text %>
       <% end %>
     <% end %>
-
+  <div>
   <%= f.submit '質問する', class: 'btn btn-success' %>
-
+  </div>
 <% end %>
 </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-  <div class="col-md-10 offset-1">
+  <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-sm-12">
   <h1>質問詳細</h1>
     <div class="card card-nav-tabs">
          <div class="card-header card-header-danger">
@@ -68,7 +68,6 @@
     </div>
   </div>
 </div>
-      <div class=".col-auto">
       <% if current_user.own?(@question)  || @question.status == "solved" %>
       <!-- アンサーエリア -->
       <%= render 'answers/answer', { answers: @answers } %>
@@ -78,4 +77,3 @@
       <!-- アンサーエリア -->
       <%= render 'answers/answer', { answers: @answers } %>
       <% end %>
-</div>
