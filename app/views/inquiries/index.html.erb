@@ -1,5 +1,14 @@
 <h1>お問い合わせ</h1>
 
+<div class="card w-100">
+     <div class="card-body">
+     <h3 class="card-title">
+     FootballQueryを使用していただきありがとうございます
+     <div>
+  こちらのフォームからご意見ご感想いただけると幸いです。
+  </div>
+</h3>
+
 <%= form_with model: @inquiry ,url: inquiry_confirm_path ,local: true do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="card w-100">
