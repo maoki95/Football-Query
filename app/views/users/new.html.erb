@@ -7,25 +7,31 @@
         <div class="card w-100">
         <div class="card-body">
          <div class="form-group has-success">
-           <%= f.label :名前 %>
+           <%= f.label :name ,"名前" %>
            <%= f.text_field :name, class: 'form-control' %>
          </div>
          <div class="form-group has-success">
-           <%= f.label :"自己紹介（任意)" %>
+           <%= f.label :introduction, "自己紹介（任意)" %>
            <%= f.text_field :introduce, class: 'form-control' %>
          </div>
          <div class="form-group has-success">
-           <%= f.label :メールアドレス %>
+           <%= f.label :email,"メールアドレス (例nfl@example.com)" %>
            <%= f.email_field :email, class: 'form-control' %>
          </div>
          <div class="form-group has-success">
-           <%= f.label :パスワード %>
+           <%= f.label :password ,"パスワード(3文字以上)" %>
            <%= f.password_field :password, class: 'form-control' %>
          </div>
          <div class="form-group has-success">
-           <%= f.label :パスワード（確認） %>
+           <%= f.label :password_confirmation,"パスワード（確認）" %>
            <%= f.password_field :password_confirmation, class: 'form-control' %>
          </div>
+         <span>
+         <%= link_to "利用規約", terms_of_use_path,class:"use_border"%>と<%= link_to "プライバシーポリシー",  privacy_policy_path,class:"use_border"%>に同意した上で、ご登録ください。
+         <div>
+          ❇︎ <%= link_to "FootballQueryの使い方", use_path,class:"use_border"%>
+          </div>
+         </span>
          
          <%= f.submit '登録', class: 'btn btn-success' %>
        <% end %>
