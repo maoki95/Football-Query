@@ -35,14 +35,14 @@
              <% answer.replies.each do |reply| %>
                <div> 
                <div>---------------------------------------------------------------------------------------------------------------------<div>
-               <% if answer.user.rank == "Silver"%>
-               <%= image_tag answer.user.avatar.url, class: 'rounded-circle', size: '70x70' ,style:"border: 5px solid 
+               <% if reply.user.rank == "Silver"%>
+               <%= image_tag reply.user.avatar.url, class: 'rounded-circle', size: '70x70' ,style:"border: 5px solid 
               #c0c0c0"%>
-             <% elsif answer.user.rank == "Bronze"%>
-              <%= image_tag answer.user.avatar.url, class: 'rounded-circle', size: '70x70' ,style:"border: 5px solid 
+             <% elsif reply.user.rank == "Bronze"%>
+              <%= image_tag reply.user.avatar.url, class: 'rounded-circle', size: '70x70' ,style:"border: 5px solid 
               #b87333"%>
-              <% elsif answer.user.rank == "Gold"%>
-              <%= image_tag answer.user.avatar.url, class: 'rounded-circle', size: '70x70' ,style:"border: 5px solid 
+              <% elsif reply.user.rank == "Gold"%>
+              <%= image_tag reply.user.avatar.url, class: 'rounded-circle', size: '70x70' ,style:"border: 5px solid 
               #e6b422"%>
                <% end %>
                 <h3><%= reply.user.name %></h3>
@@ -88,7 +88,7 @@
            <p><%= l answer.created_at, format: :long %> </p>
          <div class="collapse" id="collapseReply<%=answer.id%>">
          <div class="card card-body">
-         <%= form_with(model:[@question,@answer_reply], local: true, data: {confirm: "#{answer.user.name}さんへコメントしますか？"}) do |f| %>
+         <%= form_with(model:[@question,@answer_reply], local: true, data: {confirm: "このアンサー及びコメントににコメントしますか？"}) do |f| %>
             <p><label>アンサー返信フォーム</label></p>
             <div class="form-group has-success">
              <textarea class="form-control input-form" name="answer[body]" rows="2"><%=@answer_reply.body%></textarea>
