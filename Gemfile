@@ -79,6 +79,7 @@ gem 'ransack'
 gem 'kaminari'
 
 gem 'dotenv-rails'
+gem 'fog-aws'
 
 group :production, :staging do
   gem 'unicorn'

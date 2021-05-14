@@ -57,7 +57,9 @@
         <span>なし</span>
       <% end %>
       <%= l @question.created_at, format: :long %>
-      <%= render 'crud_menus', question: @question if current_user.own?(@question) %>
+      <% if current_user.own?(@question)  && @question.status == "unsolved" %>
+      <%= render 'crud_menus', question: @question %>
+      <% end %>
            </div>
         </div> 
        </div>
