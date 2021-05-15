@@ -8,13 +8,13 @@
     <%= stylesheet_link_tag    'top', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <% if Rails.env.production?%>
+    
     <%= render partial: 'layouts/google_analytics'%>
-    <% end%>
 
     </head>
   <body> 
      <main>
+     <%= render 'shared/flash_message' %>
      <%= yield %>
      </main>
      <%= render 'shared/footer' %>
