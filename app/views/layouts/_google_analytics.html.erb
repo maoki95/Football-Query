@@ -1,8 +1,8 @@
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QFC0EEHJ5B"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%=ENV["ANARYTICS"]%>"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-QFC0EEHJ5B');
+  gtag('config','<%=ENV["ANARYTICS"]%>');
 </script>
