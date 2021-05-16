@@ -88,7 +88,7 @@
            <p><%= l answer.created_at, format: :long %> </p>
          <div class="collapse" id="collapseReply<%=answer.id%>">
          <div class="card card-body">
-         <%= form_with(model:[@question,@answer_reply], local: true, data: {confirm: "このアンサー及びコメントににコメントしますか？"}) do |f| %>
+         <%= form_with(model:[@question,@answer_reply], local: true, data: {confirm: "このアンサーまたはコメントに返信しますか？"}) do |f| %>
             <p><label>アンサー返信フォーム</label></p>
             <div class="form-group has-success">
              <textarea class="form-control input-form" name="answer[body]" rows="2"><%=@answer_reply.body%></textarea>

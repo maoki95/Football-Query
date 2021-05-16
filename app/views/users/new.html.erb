@@ -1,3 +1,4 @@
+<% unless logged_in? %>
 <div class="container-fluid">
    <div class="row">
      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-sm-12">
@@ -32,7 +33,6 @@
           ❇︎ <%= link_to "FootballQueryの使い方", use_path,class:"use_border"%>
           </div>
          </span>
-         
          <%= f.submit '登録', class: 'btn btn-success' %>
        <% end %>
        </div>
@@ -45,3 +45,6 @@
      </div>
    </div>
  </div>
+ <% else %>
+ <h2>すでにログイン済みです<h2>
+ <% end%>

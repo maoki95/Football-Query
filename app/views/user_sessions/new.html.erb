@@ -1,4 +1,4 @@
-
+<% unless logged_in? %>
 <div class="container-fluid">
    <div class="row">
      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-sm-12">
@@ -27,7 +27,7 @@
        <% end %>
        </div>
          </div>
-       
+        
        <div class='text-center'>
        <div class="arrow">
          <%= link_to '登録ページへ', new_user_path %>
@@ -36,3 +36,6 @@
      </div>
    </div>
  </div>
+<% else %>
+<h2>すでにログイン済みです<h2>
+ <% end %>
