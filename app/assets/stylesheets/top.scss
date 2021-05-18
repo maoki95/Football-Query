@@ -142,7 +142,6 @@ a.btn-border:hover:after {
 body {
   background-image: image-url('QB.jpg');
   background-color:rgba(229, 238, 229, 0.219);
-  background-blend-mode:lighten;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -235,6 +234,7 @@ div.top {
   left: 50%;
   width: 40em;
   margin: 0 0 0 -20em;
+  text-shadow:1px 1px 0 black;
   
   span {
 
@@ -244,17 +244,13 @@ div.top {
     display: block;
     margin: 0 auto;
     text-shadow: 0 0 80px rgba(255,255,255,.5);
+    text-shadow:0 5px 5px black;
 
 /* Clip Background Image */
-
-    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
-    -webkit-background-clip: text;
-    background-clip: text;
-
 /* Animate Background Image */
 
-    -webkit-text-fill-color: transparent;
-    animation: aitf 80s linear infinite;
+    
+
 
 /* Activate hardware acceleration for smoother animations */
 
@@ -266,10 +262,7 @@ div.top {
 
 /* Animate Background Image */
 
-@keyframes aitf {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
+
 
 
 .main_button{
