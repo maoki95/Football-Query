@@ -253,21 +253,20 @@ div.top {
 
 /* Animate Background Image */
 
-
     -webkit-text-fill-color: transparent;
-    animation: aitf 80s linear infinite;
+    -webkit-animation: aitf 80s linear infinite;
 
 /* Activate hardware acceleration for smoother animations */
 
-    transform: translate3d(0,0,0);
-    backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
 
   }
 }
 
 /* Animate Background Image */
 
-@keyframes aitf {
+@-webkit-keyframes aitf {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
 }
