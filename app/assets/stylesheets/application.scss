@@ -19,6 +19,7 @@
 body {
   background-image: image-url('aaaaa.jpeg');
   background-color:rgba(229, 238, 229, 0.219);
+  background-blend-mode:lighten;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -15319,7 +15320,7 @@ textarea {
 }
 
 .badge {
-  padding: 12px 14px;
+  padding: 8px 10px;
   text-transform: uppercase;
   font-size: 15px;
   color: #ffffff;
@@ -17605,8 +17606,9 @@ footer .pull-center {
 .card.bg-danger,
 .card.card-rotate.bg-danger .front,
 .card.card-rotate.bg-danger .back {
-  background-image: image-url("unnamed-1.jpg");
+  background-image: image-url("unnamed-1.png");
   background-position:center center;
+  background-blend-mode:lighten;
   height: 100px;
   background-repeat: no-repeat;
   background-size: cover;
