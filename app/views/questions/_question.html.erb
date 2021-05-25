@@ -39,7 +39,7 @@
        <% end %>
        </div>
        </div>
-      <p class="card-text"><%= question.body %></p>
+      <p class="card-text"><%=  simple_format(question.body) %></p>
       <% question.pictures.each do |picture| %>
         <%= link_to picture.url, 'data-lightbox': picture do%>
           <%= image_tag picture.url if question.pictures.present?%>
