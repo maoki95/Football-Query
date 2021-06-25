@@ -43,3 +43,6 @@ ja:
        fail: 'コメントに失敗しました'
      destroy:
        success: 'コメントを削除しました'
+   views:
+     pagination:
+      truncate: "..."

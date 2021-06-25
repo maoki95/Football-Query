@@ -21,4 +21,8 @@ class Question < ApplicationRecord
       solved!
     end
   end
+
+  def answers_count
+   self.answers.where(parent_id: nil).count
+  end
 end
