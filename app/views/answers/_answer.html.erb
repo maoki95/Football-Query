@@ -61,7 +61,7 @@
       </td>
       <td class="action">
         <div class="text-right">
-          <% if current_user.own?(answer) && @question.best_answer_id != answer.id %>
+        <% if logged_in? && current_user.own?(answer) && @question.best_answer_id != answer.id%>
             <%= link_to answer_path(answer),
                class: 'js-delete-answer-button',
                method: :delete,
@@ -72,7 +72,7 @@
                </span>
             <% end %>
           <% end %>
-          <% if current_user.own?(@question) && @question.best_answer_id != answer.id %>
+          <% if logged_in?  && current_user.own?(@question) && @question.best_answer_id != answer.id %>
             <%= form_with(model: @question, local: true, data: {confirm: "#{answer.user.name}さんの回答をベストアンサーにします。この修正は変更できません、よろしいですか？"}) do |f| %>
                <%= f.hidden_field  :best_answer_id, value: answer.id, id:"answer#{answer.id}" %>
                <%= f.submit "ベストアンサーに選ぶ",class:"btn btn-border" unless @question.best_answer_id.present? %>
